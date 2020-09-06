@@ -1,0 +1,39 @@
+<ion-header translucent>
+    <ion-toolbar>
+        <ion-title>Añadir a Carrito</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismissModal()">Cerrar</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <ion-card>
+        <img [src]="end_point+producto.url_imagen" />
+        <ion-card-header>
+            <ion-card-title>{{producto.nombre}}</ion-card-title>
+            <ion-badge color="success">Precio: ${{producto.precio}}</ion-badge>
+            <ion-card-subtitle>{{producto.descripcion}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <!-- <ion-toolbar> -->
+            <div class="ion-text-center">
+                <p>Cantidad</p>
+                <ion-button size="small" color="danger" (click)="subQty()">
+                    <ion-icon name="remove-circle-outline"></ion-icon>
+                </ion-button>
+                {{qty}}
+                <ion-button size="small" color="success" (click)="plusQty()">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                </ion-button>
+            </div>
+            <ion-row>
+                <ion-chip>
+                    <ion-label>Subtotal : ${{subtotal}}</ion-label>
+                </ion-chip>
+            </ion-row>
+            <!-- </ion-toolbar> -->
+            <ion-button expand="block" (click)="addItemCart()">{{text_btn_cart}}</ion-button>
+            <ion-button expand="block">Comprar</ion-button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

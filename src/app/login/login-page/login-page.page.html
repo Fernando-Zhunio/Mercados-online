@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Mercado Online</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="h-100  center-h-v">
+        <ion-card class="w-90">
+            <ion-card-header>
+                <!-- <ion-card-subtitle>Login</ion-card-subtitle> -->
+                <ion-card-title>LOGIN</ion-card-title>
+            </ion-card-header>
+            <form class="px-3" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+                <ion-item>
+                    <ion-label position="floating">Escriba su usuario</ion-label>
+                    <ion-input formControlName="usuario"></ion-input>
+                </ion-item>
+                <small *ngIf="!formLogin.controls['usuario'].valid">Usuario invalido</small>
+                <ion-item>
+                    <ion-label position="floating">Escriba su contraseña</ion-label>
+                    <ion-input formControlName="password"></ion-input>
+                </ion-item>
+                <small *ngIf="!formLogin.controls['password'].valid">Contraseña requerida</small>
+                <div class="my-4">
+                    <ion-button type="submit" expand="block" fill="outline">Ingresar</ion-button>
+                </div>
+            </form>
+        </ion-card>
+    </div>
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-toolbar>
+    <ion-buttons slot="end">
+        <ion-button (click)="dismissModal()">Cerrar</ion-button>
+    </ion-buttons>
+    <ion-title>Productos</ion-title>
+    <ion-label>
+        <p>{{mercado}}</p>
+    </ion-label>
+</ion-toolbar>
+<ion-content>
+    <ion-card>
+
+        <ion-grid fixed>
+            <ion-toolbar color="secondary">
+                <ion-row>
+                    <ion-col class="ion-text-center" size="5">PRODUCTO</ion-col>
+                    <ion-col class="ion-text-center" size="4">CANTIDAD</ion-col>
+                    <ion-col class="ion-text-center" size="3">PRECIO</ion-col>
+                </ion-row>
+            </ion-toolbar>
+            <ion-list>
+
+                <ion-item-sliding *ngFor="let producto of productos;index as i">
+                    <ion-item-options side="start">
+                        <ion-item-option color="danger" (click)="remove(producto.id)">
+                            <ion-icon name="trash"></ion-icon>
+                        </ion-item-option>
+                    </ion-item-options>
+                    <ion-item>
+                        <ion-row>
+                            <ion-col class="ion-text-center d-flex" size="5">
+                                <p>{{producto.nombre}}</p>
+                            </ion-col>
+                            <ion-col size="4" class="d-flex ion-text-center">
+                                <ion-button (click)="subQty(i)" size=small fill="clear" shape="round">
+                                    <ion-icon name="remove-circle-outline"></ion-icon>
+                                </ion-button>
+                                <p>{{producto.cantidad}}</p>
+                                <ion-button (click)="addQty(i)" size=small fill="clear" shape="round">
+                                    <ion-icon name="add-circle-outline"></ion-icon>
+                                </ion-button>
+                            </ion-col>
+                            <ion-col class="ion-text-center d-flex" size="3">
+                                <p>${{(producto.precioUnitario*producto.cantidad).toFixed(2)}}</p>
+                            </ion-col>
+                        </ion-row>
+                    </ion-item>
+                </ion-item-sliding>
+            </ion-list>
+        </ion-grid>
+    </ion-card>
+</ion-content>

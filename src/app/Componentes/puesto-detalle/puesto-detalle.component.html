@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Producto</ion-title>
+        <ion-item>
+            <ion-avatar slot="start">
+                <img [src]="end_point+vendedor?.imagen_perfil">
+            </ion-avatar>
+            <ion-label>
+                <h2 class="ion-text-wrap">{{vendedor?.nombres | uppercase}} {{vendedor?.apellidos | uppercase }}</h2>
+                <ion-card-subtitle>{{puesto?.codigo}}</ion-card-subtitle>
+                <p>{{mercado?.nombre}}</p>
+            </ion-label>
+        </ion-item>
+        <!-- <ion-card-subtitle></ion-card-subtitle> -->
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let producto of productos;index as id" (click)="presentModal(id)">
+            <ion-thumbnail slot="start">
+                <ion-img [src]="end_point+producto.url_imagen"></ion-img>
+            </ion-thumbnail>
+            <ion-badge slot="end" color="success">${{producto.precio}}</ion-badge>
+            <ion-label>
+                <h2 class="">{{producto.nombre}}</h2>
+                <p class="ion-text-wrap">{{producto.descripcion}}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

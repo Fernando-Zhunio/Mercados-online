@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // end_point:'http://mercados-online.com/'
+  end_point:'http://localhost:8000/'
 };
 
 /*

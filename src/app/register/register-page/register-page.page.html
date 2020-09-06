@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Mercado Online</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <!-- "apellidos":"Zhunio",
+  "celular":"593939749166",
+  "direccion":"mi casa",
+  "email":"fzhunio@hotmail.com"
+  "nombres":"fernando",
+  "password":"fernando1991",
+  "rol":"cliente",
+  "usuario":"fernando1991" -->
+    <div class="h-100  center-h-v">
+        <ion-card class="w-90">
+            <ion-card-header>
+                <!-- <ion-card-subtitle>Login</ion-card-subtitle> -->
+                <ion-card-title>LOGIN</ion-card-title>
+            </ion-card-header>
+            <form class="px-3" [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+                <ion-item>
+                    <ion-label position="floating">Escriba su Celular</ion-label>
+                    <ion-input formControlName="celular"></ion-input>
+                </ion-item>
+                <small *ngIf="!formRegister.controls['celular'].valid">Celular invalido</small>
+                <ion-item>
+                    <ion-label position="floating">Escriba su dirección</ion-label>
+                    <ion-input formControlName="direccion"></ion-input>
+                </ion-item>
+                <small *ngIf="!formRegister.controls['direccion'].valid">Direccion invalido</small>
+                <ion-item>
+                    <ion-label position="floating">Escriba su nombre</ion-label>
+                    <ion-input formControlName="nombre"></ion-input>
+                </ion-item>
+                <small *ngIf="!formRegister.controls['nombre'].valid">Nombres invalido</small>
+                <ion-item>
+                    <ion-label position="floating">Escriba su rol</ion-label>
+                    <!-- <ion-input formControlName="celular" ></ion-input> -->
+                    <ion-select>
+                        <ion-select-option>Tendero</ion-select-option>
+                        <ion-select-option>Tendero</ion-select-option>
+                        <ion-select-option>Tendero</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <small *ngIf="!formRegister.controls['rol'].valid">Rol invalido</small>
+
+
+                <ion-item>
+                    <ion-label position="floating">Escriba su correo</ion-label>
+                    <ion-input formControlName="email"></ion-input>
+                </ion-item>
+                <small *ngIf="!formRegister.controls['email'].valid">Correo invalido</small>
+                <ion-item>
+                    <ion-label position="floating">Escriba su contraseña</ion-label>
+                    <ion-input formControlName="password"></ion-input>
+                </ion-item>
+                <small *ngIf="!formRegister.controls['password'].valid">Contraseña requerida</small>
+                <div class="my-4">
+                    <ion-button expand="block" fill="outline">Ingresar</ion-button>
+                </div>
+
+            </form>
+        </ion-card>
+    </div>
+</ion-content>

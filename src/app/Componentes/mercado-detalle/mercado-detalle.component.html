@@ -1,0 +1,30 @@
+<ion-header collapse="condense">
+    <ion-searchbar color="primary" placeholder="Buscar"></ion-searchbar>
+
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+
+        <!-- <ion-label> -->
+        <ion-title size="large">PUESTOS
+            <!-- <p>{{mercado_detalle?.nombre}}</p> -->
+        </ion-title>
+        <!-- </ion-label> -->
+    </ion-toolbar>
+</ion-header>
+<!-- </ion-header> -->
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let puesto of mercado_detalle?.puestos" [routerLink]="['../../puesto-detalle',puesto.id]">
+            <ion-avatar slot="start">
+                <img [src]="end_point+puesto.vendedor.imagen_perfil">
+            </ion-avatar>
+            <ion-label>
+                <h2 class="ion-text-wrap">{{puesto.vendedor.nombres}} {{puesto.vendedor.apellidos}}</h2>
+                <h3>{{puesto.codigo}}</h3>
+                <!-- <p>Listen, I've had a pretty messed up day...</p> -->
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,41 @@
+<!-- <ion-header>
+    <ion-searchbar showCancelButton="never"></ion-searchbar>
+</ion-header> -->
+
+<!-- 
+<ion-content>
+    <ion-router-outlet></ion-router-outlet>
+    <ion-fab *ngIf="route.url != '/cliente/cart'" vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="goCart()">
+            <ion-icon name="cart-outline">
+                <ion-badge color="success" class="ion-float-sm-left">11</ion-badge>
+            </ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content> -->
+<ion-tabs>
+    <ion-fab *ngIf="route.url != '/cliente/mercado/cart'" vertical="center" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="goCart()">
+            <ion-icon name="cart-outline">
+                <ion-badge color="success" class="ion-float-sm-left">11</ion-badge>
+            </ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+    <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="mercado">
+            <ion-icon name="calendar"></ion-icon>
+            <ion-label>Mercados</ion-label>
+            <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button tab="pedidos">
+            <ion-icon name="person-circle"></ion-icon>
+            <ion-label>Pedidos</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="perfil">
+            <ion-icon name="person-circle"></ion-icon>
+            <ion-label>Perfil</ion-label>
+        </ion-tab-button>
+    </ion-tab-bar>
+</ion-tabs>
