@@ -16,8 +16,8 @@ export class CartService {
   getCartAll():Observable<ICart[]>{
     console.log('nada');
     this.$cart.next(this.cart);
-    
-    return this.$cart.asObservable()}
+    return this.$cart.asObservable()
+  }
 
   addItemCart(newItemCart:ICart){
     this.cart.push(newItemCart);

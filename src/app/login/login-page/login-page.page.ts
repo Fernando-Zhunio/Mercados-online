@@ -60,6 +60,9 @@ export class LoginPagePage implements OnInit {
           case ERoles.trasnportista:
               this.router.navigate(['/transportista', { id: res.id }]);
             break;
+          case ERoles.tendero:
+            this.router.navigate(['/tendero', { id: res.id }]);
+          break;
           default:
             this.presentToast("Error usuario no especificado");
             break;
@@ -112,8 +115,7 @@ export class LoginPagePage implements OnInit {
     session.user.celular = data.celular;
     session.user.direccion = data.direccion;
     session.user.rol = data.rol;
-    session.user.imagen = data.imagen;
-
+    session.user.imagen = data.imagen_perfil;
     session.user.id_puesto = data.id_puesto || null;
     // session.user.direccion = data.direccion;
     this.correctLogin(session);

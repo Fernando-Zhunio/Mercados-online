@@ -12,6 +12,9 @@ import { MercadoDetalleComponent } from '../../Componentes/mercado-detalle/merca
 import { PuestoDetalleComponent } from '../../Componentes/puesto-detalle/puesto-detalle.component';
 import { CarritoComponent } from '../../Componentes/carrito/carrito.component';
 import { CarritoDetalleModalComponent } from '../../Componentes/Modals/carrito-detalle-modal/carrito-detalle-modal.component';
+// import { PipeCollector } from '@angular/compiler/src/template_parser/binding_parser';
+// import { BrowserModule } from '@angular/platform-browser';
+
 
 @NgModule({
   imports: [
@@ -19,9 +22,11 @@ import { CarritoDetalleModalComponent } from '../../Componentes/Modals/carrito-d
     CommonModule,
     FormsModule,
     IonicModule,
-    ClientePageRoutingModule
+    ClientePageRoutingModule,
+   
   ],
   declarations: [
+    // PipeCollector,
     ClientePage,
     MercadoComponent,
     MercadoDetalleComponent,

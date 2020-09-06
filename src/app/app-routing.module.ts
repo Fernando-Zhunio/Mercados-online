@@ -37,6 +37,10 @@ const routes: Routes = [
     path: 'vendedor',
     canActivate:[ClientesGuard],
     loadChildren: () => import('./Page/vendedor/vendedor.module').then( m => m.VendedorPageModule)
+  },
+  {
+    path: 'tendero',
+    loadChildren: () => import('./Page/tendero/tendero.module').then( m => m.TenderoPageModule)
   }
 ];
 

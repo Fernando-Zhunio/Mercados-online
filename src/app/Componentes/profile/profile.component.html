@@ -1,8 +1,49 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Header</ion-title>
+        <ion-title>Mi Perfil</ion-title>
+        <ion-button fill="clear" slot="end" (click)="logOut()">
+            <ion-icon size="large" name="log-out-outline"></ion-icon>
+        </ion-button>
     </ion-toolbar>
 </ion-header>
+<ion-list>
+    <ion-item>
+        <ion-avatar size="large" slot="start" class="ion-no-padding ion-no-margin">
+            <img [src]="(user.imagen)?end_point+user.imagen:'https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y'">
+        </ion-avatar>
+        <ion-label>
+            <ion-title class="ion-text-capitalize ion-text-nowrap">{{user.nombres}}</ion-title>
+            <ion-title class="ion-text-capitalize ion-text-nowrap">{{user?.apellidos}}</ion-title>
+        </ion-label>
+    </ion-item>
+</ion-list>
 <ion-content>
-    holña
+    <ion-list>
+        <ion-item>
+            <ion-label>
+                <p>Celular</p>
+                <ion-text color="primary">
+                    <h1>{{user.celular}}</h1>
+                </ion-text>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                <p>Correo</p>
+                <ion-text color="primary">
+                    <h1>{{user.email}}</h1>
+                </ion-text>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                <p>Rol</p>
+                <ion-text color="primary">
+                    <h1>{{user.rol}}</h1>
+                </ion-text>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+
 </ion-content>
