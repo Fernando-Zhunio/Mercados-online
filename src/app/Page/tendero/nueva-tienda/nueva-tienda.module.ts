@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { NuevaTiendaPageRoutingModule } from './nueva-tienda-routing.module';
 
 import { NuevaTiendaPage } from './nueva-tienda.page';
-
+import { Camera } from '@ionic-native/camera/ngx';
 @NgModule({
   imports: [
     CommonModule,
@@ -16,6 +16,10 @@ import { NuevaTiendaPage } from './nueva-tienda.page';
     IonicModule,
     NuevaTiendaPageRoutingModule
   ],
-  declarations: [NuevaTiendaPage]
+  declarations: [NuevaTiendaPage],
+  providers:[
+    Camera
+  ]
+  
 })
 export class NuevaTiendaPageModule {}

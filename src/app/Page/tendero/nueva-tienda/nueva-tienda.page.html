@@ -13,8 +13,35 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
+    <div style="width: 50%;text-align: center;margin: auto;position: relative;">
+        <ion-img style="margin: auto;" size="small" src="/assets/market.png"></ion-img>
 
-    <ion-img class="ion-padding-horizontal" size="small" src="/assets/market.png"></ion-img>
+        <ion-fab fill="outline" style="position: absolute !important;" vertical="bottom" horizontal="end" slot="fixed">
+            <ion-fab-button size="small" color="tertiary" (click)="takePhoto()">
+                <ion-icon name="camera-outline"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list side="top">
+                <ion-fab-button>
+                    <ion-icon name="logo-vimeo"></ion-icon>
+                </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="bottom">
+                <ion-fab-button>
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="start">
+                <ion-fab-button>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="end">
+                <ion-fab-button>
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </ion-fab-button>
+            </ion-fab-list>
+        </ion-fab>
+    </div>
 
     <form class="ion-padding" [formGroup]="formRegisterLocal" (ngSubmit)="onSubmit()">
         <ion-item>
