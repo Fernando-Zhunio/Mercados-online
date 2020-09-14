@@ -1,0 +1,18 @@
+Usuarios mercados online
+-----------api local-------------------------
+usuario :fernando1952
+rol: tendero
+password :fernando1991
+
+usuario :fernando1991
+rol: cliente
+password :fernando1991
+
+----------------api serve -----------------
+usuario :ferzhunio
+rol  :transportista
+password: fernando1991
+
+usuario: barcelona1991
+rol  :tendero
+password:fernando1991
