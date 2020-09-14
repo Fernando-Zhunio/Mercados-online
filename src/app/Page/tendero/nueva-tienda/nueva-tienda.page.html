@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-searchbar color="primary" placeholder="Buscar"></ion-searchbar>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-item slot="start">
+            <ion-label>
+                <p class="ion-padding-start">Mercados Online</p>
+                <ion-title size="large">Registros de puesto/negocio</ion-title>
+            </ion-label>
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+
+    <ion-img class="ion-padding-horizontal" size="small" src="/assets/market.png"></ion-img>
+
+    <form class="ion-padding" [formGroup]="formRegisterLocal" (ngSubmit)="onSubmit()">
+        <ion-item>
+            <ion-label position="floating">Escriba el nombre</ion-label>
+            <ion-input formControlName="nombre"></ion-input>
+            <!-- <small *ngIf="!formRegisterLocal.controls['nombre'].valid">Nombre invalido</small> -->
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Escriba el Telefono</ion-label>
+            <ion-input type="number" formControlName="telefono"></ion-input>
+            <!-- <small *ngIf="!formRegisterLocal.controls['telefono'].valid">Telefono invalido</small> -->
+        </ion-item>
+        <ion-item>
+            <ion-label>Categorias</ion-label>
+            <ion-select value="tienda" interface="action-sheet">
+                <ion-select-option value="tienda">Tienda</ion-select-option>
+                <ion-select-option value="restaurante">Restaurante</ion-select-option>
+                <ion-select-option value="barzar">Bazar</ion-select-option>
+                <!-- <ion-select-option value="mute_year">Mute for a year</ion-select-option> -->
+            </ion-select>
+        </ion-item>
+        <!-- <small *ngIf="!formRegisterLocal.controls['telefono'].valid">Contraseña requerida</small> -->
+        <ion-item>
+            <ion-label position="floating">Escriba una descripción</ion-label>
+            <ion-textarea formControlName="descripcion"></ion-textarea>
+            <!-- <small *ngIf="!formRegisterLocal.controls['descripcion'].valid">Descripcion invalido</small> -->
+        </ion-item>
+        <div class="my-4">
+            <ion-button type="submit" expand="block" fill="outline">Registrar</ion-button>
+        </div>
+    </form>
+</ion-content>

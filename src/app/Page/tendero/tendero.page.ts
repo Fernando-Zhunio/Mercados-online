@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tendero',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TenderoPage implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router, public route:ActivatedRoute) { }
 
   ngOnInit() {
   }
 
+  goCart(){
+    
+    this.router.navigate(['tendero/nueva-tienda'])
+  }
 }
